@@ -1,0 +1,30 @@
+The purpose of this document is to track the progress of my development over several weeks and make notes on what I 
+have discussed with my mentor as to what to accomplish moving forward.
+
+*Week 1*
+
+What I completed:
+- a mock-up built using HTML and templated tailwind CSS
+- introductory Jira tasks for week one completion
+- scaffolding of the project and initial commits to Github
+
+What I could have done better:
+I still struggle with focus when there are so many exciting possible project ideas to consider. Why commit to this project when *this* project
+idea is better. I have successfully refocused but I will document below the idea that kept me so torn during my first week development.
+
+- Build out a GPT Action that systematically stages a higher level project descriptions into behavior driven development templates and then use
+Jira API to automatically create the hypothetical tasks in Jira. The profitability on this project is very high as SaaS projects target entities
+with access to high amounts of capital. It also simplifies something that often took many hours at my Capital One internship. This will be an
+exciting project that I will give myself the privledge of working on after I complete this project. Behavior Driven Development is a technique
+where tasks are written in a Given, When, Then format to emphasise information in a clear, testable, and business-value oriented way. Integrating it
+with scrum allows for a powerful way for interdisciplinary teams to all understand the happenings of a project, from developers to testers to 
+business stakeholders.
+
+What I aim to complete next week:
+- a basic login page so that I may more quickly transition to firebase integration
+- firebase integration to handle user authentication
+- bonus tasks:
+    - Google Login API Integration
+    - Github Login API Integration
+
+
