@@ -27,4 +27,26 @@ What I aim to complete next week:
     - Google Login API Integration
     - Github Login API Integration
 
+*Week 2*
+
+What I completed:
+- Migrated everything over to a barebones vue.js project
+- Learned the intracasies of vue.js (and javascript) at a blistering pace
+- Completed the routing between my home page and login page
+- Complete barebones Firebase setup which allowed for the demoing of a user sign-in
+
+What I could have done better:
+I am really proud of the work I accomplished in such a short time this week. My weakness in development is still pointing out tasks in Jira, as
+I had originally assigned what I thought was 2.5 points to myself (15 hours of work) for something that really only took me like 1.5 points (9 
+hours of work). I really blew out my own expectations this week and am looking forward to what I decide to do next week , which will probably 
+be cleaning up my project directory, as moving fast and breaking things in the sake of learning does not lend itself well to a pretty codebase.
+
+What I aim to complete next week:
+- Cleaning up my project's file structure (0.5)
+- Create Registration Page (0.5)
+- Dynamically update dashboard to show when logged in (0.5)
+- Bonus Tasks:
+    - Google Login API Integration (0.5)
+    - Github Login API Integration (0.5)
+
 
