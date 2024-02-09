@@ -49,4 +49,24 @@ What I aim to complete next week:
     - Google Login API Integration (0.5)
     - Github Login API Integration (0.5)
 
+*Week 3*
+
+What I completed:
+- Removed old boilerplate code used in project creation
+- Created Registration page
+- Made minor improvements to the Login page
+- Integrated user creation into the registion page logic using Firebase
+
+What I could have done better:
+This week I struggled a bit with getting back into the swing of coding with vue, but I know it'll get better with time. I ran into an issue
+I wasn't running npm run serve in the right directory and getting some really confusing errors. I didn't realize I had my project 2 folders
+deep instead of one. Regardless, I'm really excited about the work I did this week. I learned a lot and got a lot of hands on practice with 
+frontend development.
+
+What I aim to complete next week:
+- Important: Ensure secrets are kept in an environment file so that the project updates can be safely integrated with source control (0.25)
+- Finish dynamically updating user dashboard to show when logged in (0.5)
+- Implement user logout features (0.25) (depends on above)
+- Give thought to how and what we will be storing in our database (to be determined as scope is fleshed out)
+    - Pages and things surrounding the lifecycle creation and searching of events
 
