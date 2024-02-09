@@ -4,10 +4,10 @@
       <div class="max-w-md w-full bg-white rounded-lg shadow-xl p-6">
         <div class="mb-4">
           <h2 class="text-center text-3xl font-extrabold text-gray-900">
-            Sign in to your account
+            Register a new account
           </h2>
         </div>
-        <form @submit.prevent="login" class="space-y-6">
+        <form @submit.prevent="register" class="space-y-6">
           <div class="rounded-md shadow-sm">
             <div>
               <label for="email-address" class="sr-only">Email address</label>
@@ -17,22 +17,14 @@
               <label for="password" class="sr-only">Password</label>
               <input id="password" v-model="password" type="password" autocomplete="current-password" required class="appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Password">
             </div>
-          </div>
-    
-          <div class="flex items-center justify-between">
-            <div class="flex items-center">
-              <input id="remember-me" name="remember-me" type="checkbox" class="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded">
-              <label for="remember-me" class="ml-2 block text-sm text-gray-900"> Remember me </label>
-            </div>
-    
-            <div class="text-sm">
-              <a href="#" class="font-medium text-indigo-600 hover:text-indigo-500">Forgot your password?</a>
+            <div class="mt-3">
+              <label for="confirm-password" class="sr-only">Confirm Password</label>
+              <input id="confirm-password" v-model="confirmPassword" type="password" autocomplete="current-password" required class="appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Confirm Password">
             </div>
           </div>
-    
           <div>
               <button type="submit" class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-                  Sign in
+                  Register
               </button>
           </div>
           <p v-if="error" class="text-red-500 text-xs italic">{{ error }}</p>
@@ -64,7 +56,7 @@
         </div>
     
         <div class="mt-6 text-center">
-          <router-link to="register" class="font-medium text-indigo-600 hover:text-indigo-500"> Not a member? Register here. </router-link>
+          <router-link to="/login" class="font-medium text-indigo-600 hover:text-indigo-500"> Already have an account? Sign in. </router-link>
         </div>
       </div>
   </div>
@@ -73,23 +65,32 @@
 
 <script>
 import { auth } from '../firebase';
-import { signInWithEmailAndPassword } from 'firebase/auth';
+import { createUserWithEmailAndPassword } from 'firebase/auth';
 
 export default {
-  name: 'LoginPage',
+  name: 'RegistrationPage',
   data() {
     return {
       email: '',
       password: '',
+      confirmPassword: '',
       error: null
     };
   },
   methods: {
-    async login() {
+    async register() {
       this.error = null;
+      if (this.password.length < 8) {
+        this.error = 'Password must be at least 8 characters.';
+        return;
+      }
+      if (this.password !== this.confirmPassword) {
+        this.error = 'Passwords do not match.';
+        return;
+      }
       try {
-        await signInWithEmailAndPassword(auth, this.email, this.password); // note: add const userCredential = to the line above when we need to interact with the user object that firebase sends back
-        this.$router.push('/')
+        await createUserWithEmailAndPassword(auth, this.email, this.password); // note: add const userCredential = to the line above when we need to interact with the user object that firebase sends back
+        this.$router.push('/login')
       } catch (error) {
         this.error = error.message;
       }
