@@ -70,3 +70,72 @@ What I aim to complete next week:
 - Give thought to how and what we will be storing in our database (to be determined as scope is fleshed out)
     - Pages and things surrounding the lifecycle creation and searching of events
 
+* Week 4 *
+
+What I completed:
+- Dynamically render signin and signout states
+- incorporate vuex for global state management across files
+- create boilerplate lambda function for backend server proxy that controls api requests and accesses AWS secrets manager
+- planned out the future functionality of the application to focus on organizing running events
+
+What I could have done better: 
+I completed and learned a lot this week. I learned more about global state management in vue using vuex and planned out
+the inital functionality regarding how I'd like the app to organize running events. That said, in all my excitement I lost
+focus on whats truly important for getting to the point where I can add all the cool features I want. If there's anything
+for me to improve on, it's staying focused and keeping in mind what is holistically needed to have the application running
+not just from the perspective of a user, but from the perspective as a developer as well.
+
+What I aim to complete next week:
+- Complete secrets manager backend (2)
+    - AWS Secrets Manager Setup (0.25)
+    - Firebase API Key Retrival function (0.25)
+    - Models.py filled with any appropriate classes (0.25)
+    - Lambda properly configured and ready to send back responses (1)
+    - API Gateway is utilized to allow requests to be made via an endpoint (0.25)
+- Bonus Tasks
+    - Create Page for Event Creation (0.25)
+    - Setup Database that Stores All Details Surrounding Event Creation (2)
+
+* Week 5 *
+
+Became ill - Sprint extended to week 6
+
+* Week 6 *
+
+What I completed:
+- Initialized secrets manager connection through lambda
+- Created relevant classes in models.py
+    - Created a Singleton Class to facilitate faster lambda start up times from a shared container across mutliple invocations
+    - Created a Secrets object that uses the Singleton class as a metaclass and initializes it upon start
+
+What I aim to complete next week:
+- Setting up the Database in Firebase
+    Tasks to be completed fast and soon:
+        - Manually Enter One Sample Data Event (Think about what fields or what I'd like to store about the event)
+        - Retrieve the data programmatically
+- Event Details Page
+- Events Creation Page
+    - Boilerplate
+    - Storing in database
+
+* Week 7 *
+
+What I completed:
+- Troubleshooted various things regarding my prod lambda:
+    - Added a missing resource policy which prevented me from accessing secrets manager
+    - Fixed issues regarding trying to read data in the format of the 1.0 API Gateway event partitioning format vs 2.0 HTTP format
+    - Reconfigured the structure of services/secrets_manager to be encapsulated by models/models.py because importing from one subdirectory
+    to another goes against lambda's rules
+    - Reconfigured API Gateway to allow for a properly configured CORS and proper usage of path parameters
+    - Read through many cloudwatch logs to identify various bugs and issues along the way
+
+What I aim to complete next week:
+- All week 6 tasks must be carried over and are listed below:
+- Setting up the Database in Firebase
+    Tasks to be completed fast and soon:
+        - Manually Enter One Sample Data Event (Think about what fields or what I'd like to store about the event)
+        - Retrieve the data programmatically
+- Event Details Page
+- Events Creation Page
+    - Boilerplate
+    - Storing in database

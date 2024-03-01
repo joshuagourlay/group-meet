@@ -72,8 +72,6 @@
 </template>
 
 <script>
-import { auth } from '../firebase';
-import { signInWithEmailAndPassword } from 'firebase/auth';
 
 export default {
   name: 'LoginPage',
@@ -88,7 +86,10 @@ export default {
     async login() {
       this.error = null;
       try {
-        await signInWithEmailAndPassword(auth, this.email, this.password); // note: add const userCredential = to the line above when we need to interact with the user object that firebase sends back
+        await await this.$store.dispatch('login', {
+          email: this.email,
+          password: this.password
+        });
         this.$router.push('/')
       } catch (error) {
         this.error = error.message;

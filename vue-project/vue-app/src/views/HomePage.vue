@@ -5,52 +5,55 @@
   
   <div class="flex h-screen">
       <!-- Left Sidebar -->
-      <div class="flex-1 w-1/4 bg-gray-100 p-5">
-          <div class="relative mb-3 flex items-center pb-3">
-              <i class="fa-solid fa-volleyball w-5 h-5 mr-2 mt-2"></i>
-              <h2 class="text-xl">Sports Connect</h2>
-              <div class="mt-14 absolute left-3 w-44 h-0.5 bg-gray-400"></div>
-          </div>
-          <!-- Dashboard Section -->
-          <div class="relative mb-4 pb-3">
-              <a href="#" class="block py-2 px-4 hover:bg-gray-300">
-                <i class="fa-solid fa-house mr-2 w-4"></i>
-                Dashboard
-              </a>
-              <a href="#" class="block py-2 px-4 hover:bg-gray-300">
-                <i class="fa-solid fa-user-group mr-2 w-4"></i>
-                Teams
-                </a>
-  
-              <a href="#" class="block py-2 px-4 hover:bg-gray-300">
-                <i class="fa-regular fa-calendar-days ml-0.5 mr-2 w-3.5"></i>
-                Calendar</a>
-              <a href="#" class="block py-2 px-4 hover:bg-gray-300">
-                <i class="fa-solid fa-check-double mr-2 w-4"></i>
-                Past Events</a>
-              <a href="#" class="block py-2 px-4 hover:bg-gray-300">
-                <i class="fa-solid fa-signal mr-2 w-4"></i>
-                User Stats</a>
-              <div class="mt-3 absolute left-3 w-44 h-0.5 bg-gray-400"></div>
-          </div>
-          <!-- Your Teams Section -->
-          <div class="mb-5">
-              <h2 class="text-x1 font-bold mb-2">Your teams</h2>
-              <a href="#" class="block py-2 px-4 hover:bg-gray-300">First String</a>
-              <a href="#" class="block py-2 px-4 hover:bg-gray-300">Kickballers</a>
-              <a href="#" class="block py-2 px-4 hover:bg-gray-300">USF CS</a>
-          </div>
-          <!-- Profile Icon and Name -->
-          <div class="flex items-center">
-            <div class="flex">
-              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQs54XN5A_Uwe_sNageZPmKcq5XIdWTf2-PjTbPxbteCg&s" alt="Tom Cook" class="w-5 h-5 rounded-full mr-2 mt-2">
-              <p class="text-center mt-2">Joshua Gourlay</p>
+      <div class="flex flex-col justify-between flex-1 w-1/4 bg-gray-100 p-5">
+        <div>
+            <div class="relative mb-3 flex items-center pb-3">
+                <i class="fa-solid fa-volleyball w-5 h-5 mr-2 mt-2"></i>
+                <h2 class="text-xl">Sports Connect</h2>
+                <div class="mt-14 absolute left-3 w-44 h-0.5 bg-gray-400"></div>
             </div>
+            <!-- Dashboard Section -->
+            <div class="relative mb-4 pb-3">
+                <a href="#" class="block py-2 px-4 hover:bg-gray-300">
+                  <i class="fa-solid fa-house mr-2 w-4"></i>
+                  Dashboard
+                </a>
+                <a href="#" class="block py-2 px-4 hover:bg-gray-300">
+                  <i class="fa-solid fa-user-group mr-2 w-4"></i>
+                  Teams
+                  </a>
+    
+                <a href="#" class="block py-2 px-4 hover:bg-gray-300">
+                  <i class="fa-regular fa-calendar-days ml-0.5 mr-2 w-3.5"></i>
+                  Calendar</a>
+                <a href="#" class="block py-2 px-4 hover:bg-gray-300">
+                  <i class="fa-solid fa-check-double mr-2 w-4"></i>
+                  Past Events</a>
+                <a href="#" class="block py-2 px-4 hover:bg-gray-300">
+                  <i class="fa-solid fa-signal mr-2 w-4"></i>
+                  User Stats</a>
+                <div class="mt-3 absolute left-3 w-44 h-0.5 bg-gray-400"></div>
+            </div>
+            <!-- Your Teams Section -->
+            <div class="mb-5">
+                <h2 class="text-x1 font-bold mb-2">Your teams</h2>
+                <a href="#" class="block py-2 px-4 hover:bg-gray-300">First String</a>
+                <a href="#" class="block py-2 px-4 hover:bg-gray-300">Kickballers</a>
+                <a href="#" class="block py-2 px-4 hover:bg-gray-300">USF CS</a>
+            </div>
+        </div>
+        <!-- Profile Icon and Name -->
+        <div>
+          <div class="flex items-center">
+            <p v-if="user" class="text-center mt-2">Signed in as {{ user.email }}.</p>
+            <p v-else class="text-center mt-2">Not signed in</p>
           </div>
           <div class="flex items-center">
-            <router-link to="/login">Login</router-link>
+            <router-link v-if="user" to="#" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" @click.prevent="logout">Logout</router-link>
+            <router-link v-else to="/login" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Login</router-link>
           </div>
-      </div>
+        </div>
+    </div>
   
       <!-- Right Content Area -->
       <div class="w-3/4 p-5">
@@ -80,8 +83,18 @@
   <script>
   export default {
     name: 'HomePage',
+    methods: {
+      logout() {
+        this.$store.dispatch('logout');
+      }
+    },
+    computed: {
+      user() {
+        return this.$store.state.user;
+      }
+    }
     
-  }
+  };
   </script>
   
   <!-- Add "scoped" attribute to limit CSS to this component only -->
