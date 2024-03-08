@@ -1,7 +1,9 @@
 import { initializeApp } from 'firebase/app';
 import { getAuth } from 'firebase/auth';
+import { getFirestore } from 'firebase/firestore';
 
 const firebaseConfig = {
+    apiKey: "{{process.env.VUE_APP_FIREBASE_API_KEY}}",
     authDomain: "sports-comm.firebaseapp.com",
     projectId: "sports-comm",
     storageBucket: "sports-comm.appspot.com",
@@ -12,5 +14,7 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
+const db = getFirestore(app);
 
-export { auth };
+
+export { auth, db };

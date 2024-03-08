@@ -3,6 +3,7 @@ import HomePage from '../views/HomePage.vue'
 import LoginPage from '../views/LoginPage.vue'
 import RegistrationPage from '../views/RegistrationPage.vue'
 import EventPage from '../views/EventPage.vue'
+import EventCreation from '../views/EventCreation.vue'
 
 const routes = [
     {
@@ -24,6 +25,11 @@ const routes = [
         path: '/events/:id',
         name:'Events',
         component: EventPage
+    },
+    {
+        path: '/add-event',
+        name: 'EventCreation',
+        component: EventCreation
     },
 
 ];
