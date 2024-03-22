@@ -4,6 +4,8 @@ import LoginPage from '../views/LoginPage.vue'
 import RegistrationPage from '../views/RegistrationPage.vue'
 import EventPage from '../views/EventPage.vue'
 import EventCreation from '../views/EventCreation.vue'
+import EventSummary from '../views/EventSummary.vue'
+
 
 const routes = [
     {
@@ -23,7 +25,7 @@ const routes = [
     },
     {
         path: '/events/:id',
-        name:'Events',
+        name:'Events-id',
         component: EventPage
     },
     {
@@ -31,7 +33,11 @@ const routes = [
         name: 'EventCreation',
         component: EventCreation
     },
-
+    {
+        path: '/events',
+        name: 'Events',
+        component: EventSummary
+    },
 ];
 
 const router = createRouter({
