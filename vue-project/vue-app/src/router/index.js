@@ -13,30 +13,30 @@ const routes = [
     children: [
       
       {
-        path: '/events',
-        name: 'Events',
+        path: '/dashboard',
+        name: 'dashboard',
         component: EventSummary,
       },
       {
         path: '/events/:id',
-        name: 'Events-id',
+        name: 'get-events-by-id',
         component: EventPage,
       },
       {
         path: '/add-event',
-        name: 'EventCreation',
+        name: 'event-creation',
         component: EventCreation,
       },
     ],
   },
   {
     path: '/login',
-    name: 'Login',
+    name: 'login',
     component: LoginPage,
   },
   {
     path: '/register',
-    name: 'Register',
+    name: 'register',
     component: RegistrationPage,
   },
 ];
