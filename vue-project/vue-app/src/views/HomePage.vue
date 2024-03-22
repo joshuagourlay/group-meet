@@ -12,27 +12,13 @@
                 <h2 class="text-xl">Sports Connect</h2>
                 <div class="mt-14 absolute left-3 w-44 h-0.5 bg-gray-400"></div>
             </div>
-            <!-- Dashboard Section -->
+            <!-- Dashboard Links -->
             <div class="relative mb-4 pb-3">
-                <a href="#" class="block py-2 px-4 hover:bg-gray-300">
-                  <i class="fa-solid fa-house mr-2 w-4"></i>
-                  Dashboard
+                <a v-for="page in pages" :key="page.title" :href="page.path" class="block py-2 px-4 hover:bg-gray-300">
+                  <i :class="page.icon" class="mr-2 w-4"></i>
+                  {{ page.title }}
                 </a>
-                <a href="#" class="block py-2 px-4 hover:bg-gray-300">
-                  <i class="fa-solid fa-user-group mr-2 w-4"></i>
-                  Teams
-                  </a>
-    
-                <a href="#" class="block py-2 px-4 hover:bg-gray-300">
-                  <i class="fa-regular fa-calendar-days ml-0.5 mr-2 w-3.5"></i>
-                  Calendar</a>
-                <a href="#" class="block py-2 px-4 hover:bg-gray-300">
-                  <i class="fa-solid fa-check-double mr-2 w-4"></i>
-                  Past Events</a>
-                <a href="#" class="block py-2 px-4 hover:bg-gray-300">
-                  <i class="fa-solid fa-signal mr-2 w-4"></i>
-                  User Stats</a>
-                <div class="mt-3 absolute left-3 w-44 h-0.5 bg-gray-400"></div>
+                
             </div>
             <!-- Your Teams Section -->
             <div class="mb-5">
@@ -92,8 +78,18 @@
       user() {
         return this.$store.state.user;
       }
-    }
-    
+    },
+    data() {
+      return {
+        pages: [
+          { title: 'Dashboard', path: '#', icon: 'fa-solid fa-house' },
+          { title: 'Teams', path: '#', icon: 'fa-solid fa-user-group' },
+          { title: 'Calendar', path: '#', icon: 'fa-regular fa-calendar-days' },
+          { title: 'Past Events', path: '#', icon: 'fa-solid fa-check-double' },
+          { title: 'User Stats', path: '#', icon: 'fa-solid fa-signal' },
+        ],
+      };
+    },
   };
   </script>
   
