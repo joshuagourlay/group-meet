@@ -139,3 +139,21 @@ What I aim to complete next week:
 - Events Creation Page
     - Boilerplate
     - Storing in database
+
+* Week 8 *
+
+- Notes: 
+
+ - Still need to integrate links to new pages from home page
+    - Integrate into home page
+- Search thru events
+    - Summary view
+    - Considerations on home I'm organizing thing (cards?)
+    - Search Page
+    - We talked about maybe adding tags to help make documents more searchable
+    - Map Integration (Huge Wish list)
+    - We talked about how to incorporate filtering and searching
+    - Sync Location with user
+
+Primary concerns:
+    - Retrieving all by location and displaying them by date asc
