@@ -145,11 +145,11 @@ What I aim to complete next week:
 - Notes: 
 
  - Still need to integrate links to new pages from home page
-    - Integrate into home page
+    - Integrate into home page (done)
 - Search thru events
-    - Summary view
+    - Summary view (done)
     - Considerations on home I'm organizing thing (cards?)
-    - Search Page
+    - Search Page - within a certain time range, or have certain keywords, or within certain categories
     - We talked about maybe adding tags to help make documents more searchable
     - Map Integration (Huge Wish list)
     - We talked about how to incorporate filtering and searching
@@ -157,3 +157,43 @@ What I aim to complete next week:
 
 Primary concerns:
     - Retrieving all by location and displaying them by date asc
+
+
+* Investigate relative link from 'get-event-by-id' to dashboard link runtime error
+
+* Week 9 *
+
+What I want to do by next week:
+- Search/filter functionality (top priority)
+    - Filter by date
+    - Search by words in title or description
+    - Add Tags (Think about in a bit)
+- Wish List:
+    - Map Integration (Huge Wish list)
+    - Sync Location with user
+
+* Week 10 *
+
+Todo:
+- Debugging the search bar (asap plz)
+- More Robust Location entering
+    - uses the google cities api
+    - modifies how we are storing location 
+    - adds searching by location functionality
+
+Bonus Tasks:
+    - Map integration (sample task)
+        - test in a sandboxed area perhaps a google maps integration
+    - Look into user location
+        - more specifically, iron out proposal even if it's manually entering location
+        - my considerations: if we can magically find location, that's best
+
+# note to self: As we met with our mentor Brain for the first time this wednesday, we talked about some 
+coping strategies for mitigating some adhd quirks in the workplace. Mine is overpromising due to the 
+excitement associated with commiting to doing an impressive amount of work at once. To remedy this, Brain 
+proposed I practice underpromising and over delivering. To do this, I will not quite underpromise, but more
+effectively work into my time estimates room for error. How I put that into practice this week is I cut my
+tasks off early and partitioned more of it into bonus tasks. I now need to make sure my eyes don't deceive me
+that I understand that the bonus tasks are absolutely still a priority and still need to get done (in some capacity). 
+Again, the second part of our goal is to overdeliver and I intend to do just that. 
+
