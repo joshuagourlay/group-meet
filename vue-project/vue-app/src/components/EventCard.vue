@@ -10,8 +10,12 @@
       <i class="fas fa-calendar-alt mr-1"></i> {{ event.date }}
     </p>
     <p class="text-gray-600 mb-2">
-      <i class="fas fa-map-marker-alt mr-1"></i> {{ event.location }}
+      <i class="fas fa-map-marker-alt mr-1"></i> {{ event.locationDescription }}
     </p>
+    <div class="mt-4">
+      <div ref="map" style="height: 200px;"></div>
+    </div>
+
     <p class="text-gray-700 mb-4">{{ event.description }}</p>
     <div class="mt-4">
       <span v-for="tag in event.tags" :key="tag" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">{{ tag }}</span>
@@ -23,6 +27,7 @@
 </template>
 
 <script>
+/* global google */
 export default {
   name: 'EventCard',
   props: {
@@ -30,6 +35,27 @@ export default {
       type: Object,
       required: true,
     },
+  },
+  data() {
+    return {
+      map: null,
+    };
+  },
+  methods: {
+    initializeMap() {
+      const mapOptions = {
+        center: { lat: this.event.lat, lng: this.event.lng },
+        zoom: 12,
+      };
+      this.map = new google.maps.Map(this.$refs.map, mapOptions);
+      new google.maps.Marker({
+        position: { lat: this.event.lat, lng: this.event.lng },
+        map: this.map,
+      });
+    },
+  },
+  mounted() {
+    this.initializeMap();
   },
 };
 </script>

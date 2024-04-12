@@ -24,7 +24,6 @@
       <!-- Upcoming Events -->
       <h3 class="text-xl font-bold mb-4">Upcoming Events</h3>
       <div v-for="(eventGroup, location) in upcomingEventsByLocation" :key="location" class="mb-8">
-        <h4 class="text-lg font-semibold mb-2">{{ location }}</h4>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           <EventCard v-for="event in eventGroup" :key="event.id" :event="event" />
         </div>
@@ -34,7 +33,6 @@
     <!-- Past Events -->
     <h3 class="text-xl font-bold mb-4">Past Events</h3>
     <div v-for="(eventGroup, location) in pastEventsByLocation" :key="location" class="mb-8">
-      <h4 class="text-lg font-semibold mb-2">{{ location }}</h4>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         <EventCard v-for="event in eventGroup" :key="event.id" :event="event" />
       </div>
