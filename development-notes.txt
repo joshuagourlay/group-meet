@@ -205,3 +205,10 @@ What I accompished:
 - Debugging the search bar
 - Fixed a bug where API keys weren't working as expected (firebase and maps)
     - culprit was the .env file being in the wrong location
+- Added Map Functionality to the following files:
+    - EventCreation.vue
+        - Embedded a simple map with a draggable icon that allows a lat and lng coord to be saved upon even creation that 
+        can be pulled up in event summary to better show meet up location
+    - EventCard.vue
+        - Embedded a map that is displayed if lat and lng coords are stored in our data collection
+        
