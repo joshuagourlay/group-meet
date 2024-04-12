@@ -5,7 +5,7 @@
   
   <div class="flex h-screen">
       <!-- Left Sidebar -->
-      <div class="flex flex-col justify-between flex-1 w-1/4 bg-gray-100 p-5">
+      <div class="sidebar flex flex-col justify-between flex-1 w-96 bg-gray-100 p-5">
         <div>
             <div class="relative mb-3 flex items-center pb-3">
                 <i class="fa-solid fa-volleyball w-5 h-5 mr-2 mt-2"></i>
@@ -39,11 +39,11 @@
             <router-link v-else to="/login" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Login</router-link>
           </div>
         </div>
-    </div>
+      </div>
   
       <!-- Right Content Area -->
       <div class="w-2/3 p-5">
-      <router-view></router-view>
+        <router-view></router-view>
     </div>
       
   </div>
@@ -65,7 +65,8 @@
     data() {
       return {
         pages: [
-          { title: 'Dashboard', path: '#', icon: 'fa-solid fa-house' },
+          { title: 'Dashboard', path: 'dashboard', icon: 'fa-solid fa-house' },
+          { title: 'Add Event', path: 'create-event', icon: 'fa-solid fa-house'},
           { title: 'Teams', path: '#', icon: 'fa-solid fa-user-group' },
           { title: 'Calendar', path: '#', icon: 'fa-regular fa-calendar-days' },
           { title: 'Past Events', path: '#', icon: 'fa-solid fa-check-double' },
@@ -78,5 +79,4 @@
   
   <!-- Add "scoped" attribute to limit CSS to this component only -->
   <style scoped>
-  
   </style>

@@ -18,6 +18,10 @@
           <label for="location">Location:</label>
           <input type="text" id="location" v-model="event.location" required>
         </div>
+        <div>
+          <label for="tags">Tags:</label>
+          <input type="text" id="tags" v-model="event.tags" placeholder="Enter comma-separated tags">
+        </div>
         <button type="submit">Create Event</button>
       </form>
     </div>
@@ -36,6 +40,7 @@
           description: '',
           date: '',
           location: '',
+          tags: '',
         },
       };
     },
@@ -43,7 +48,11 @@
       async createEvent() {
         try {
           const eventsCollectionRef = collection(db, 'events')
-          const eventRef = await addDoc(eventsCollectionRef, this.event);
+          const eventData = {
+            ...this.event,
+            tags: this.event.tags.split(',').map(tag => tag.trim()),
+          };
+          const eventRef = await addDoc(eventsCollectionRef, eventData);
           console.log('Event created with ID:', eventRef.id);
           // Reset the form fields after successful creation
           this.event = {
@@ -51,6 +60,7 @@
             description: '',
             date: '',
             location: '',
+            tags: '',
           };
           // Optionally, navigate to the event details page or show a success message
         } catch (error) {
