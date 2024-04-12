@@ -70,7 +70,7 @@ export default {
           const matchesSearch =
             event.title.toLowerCase().includes(this.searchQuery.toLowerCase()) ||
             event.description.toLowerCase().includes(this.searchQuery.toLowerCase()) ||
-            event.tags.some(tag => tag.toLowerCase().includes(this.searchQuery.toLowerCase()));
+            (event.tags && event.tags.some(tag => tag.toLowerCase().includes(this.searchQuery.toLowerCase())));
 
           const matchesDateRange =
             (!this.endDate || event.date <= this.endDate) &&
@@ -95,7 +95,7 @@ export default {
           const matchesSearch =
             event.title.toLowerCase().includes(this.searchQuery.toLowerCase()) ||
             event.description.toLowerCase().includes(this.searchQuery.toLowerCase()) ||
-            event.tags.some(tag => tag.toLowerCase().includes(this.searchQuery.toLowerCase()));
+            (event.tags && event.tags.some(tag => tag.toLowerCase().includes(this.searchQuery.toLowerCase())));
 
           const matchesDateRange =
             event.date < this.startDate &&
