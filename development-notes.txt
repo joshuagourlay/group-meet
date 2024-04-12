@@ -188,7 +188,7 @@ Bonus Tasks:
         - more specifically, iron out proposal even if it's manually entering location
         - my considerations: if we can magically find location, that's best
 
-# note to self: As we met with our mentor Brain for the first time this wednesday, we talked about some 
+# note to self: As we met with our mentor Brian for the first time this wednesday, we talked about some 
 coping strategies for mitigating some adhd quirks in the workplace. Mine is overpromising due to the 
 excitement associated with commiting to doing an impressive amount of work at once. To remedy this, Brain 
 proposed I practice underpromising and over delivering. To do this, I will not quite underpromise, but more
@@ -197,3 +197,11 @@ tasks off early and partitioned more of it into bonus tasks. I now need to make 
 that I understand that the bonus tasks are absolutely still a priority and still need to get done (in some capacity). 
 Again, the second part of our goal is to overdeliver and I intend to do just that. 
 
+* Week 11 & 12 *
+
+Went on vacation week 11 for the eclipse so only got to make minor improvements before I left. Progress was made though!
+
+What I accompished:
+- Debugging the search bar
+- Fixed a bug where API keys weren't working as expected (firebase and maps)
+    - culprit was the .env file being in the wrong location
