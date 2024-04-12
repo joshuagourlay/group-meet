@@ -2,29 +2,34 @@ import { createRouter, createWebHistory } from 'vue-router';
 import MainLayout from '../components/MainLayout.vue';
 import LoginPage from '../views/LoginPage.vue';
 import RegistrationPage from '../views/RegistrationPage.vue';
-import EventPage from '../views/EventPage.vue';
+import EventDetails from '../views/EventPage.vue';
 import EventCreation from '../views/EventCreation.vue';
 import EventSummary from '../views/EventSummary.vue';
 
 const routes = [
-  {
+    {
+        path: '/',
+        redirect: '/dashboard',
+    },
+    {
+
     path: '/',
     component: MainLayout,
     children: [
       
       {
-        path: '/dashboard',
+        path: 'dashboard',
         name: 'dashboard',
         component: EventSummary,
       },
       {
         path: '/events/:id',
-        name: 'get-events-by-id',
-        component: EventPage,
+        name: 'EventDetails',
+        component: EventDetails,
       },
       {
-        path: '/add-event',
-        name: 'event-creation',
+        path: '/create-event',
+        name: 'create-event',
         component: EventCreation,
       },
     ],
